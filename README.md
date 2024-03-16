@@ -9,7 +9,4 @@ Free and open-source project Todolist.
 - Time your tasks
 - Toggle task completion
 
-
-![02.jpg](https://1drv.ms/i/s!AimWap0cwlh7guwAXg4x07R57EWaUQ?e=mrVuzz)
-
 Feel free to download. Report any bugs please. Thank you
