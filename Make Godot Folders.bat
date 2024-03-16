@@ -1,0 +1,5 @@
+mkdir "%~dp0Assets"
+mkdir "%~dp0Fonts"
+mkdir "%~dp0Scenes"
+mkdir "%~dp0Scripts"
+mkdir "%~dp0Resources"

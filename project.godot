@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Projek X"
+config/version="1.0"
+run/main_scene="res://Scenes/main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Project X"
+config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=60
+boot_splash/bg_color=Color(0.054902, 0.054902, 0.054902, 1)
+boot_splash/image="res://Assets/Logo.png"
+config/icon="res://Assets/IconLogo.png"
+config/windows_native_icon="res://Assets/ProjekXIcon.ico"
+boot_splash/minimum_display_time=2000
+
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
+[display]
+
+window/size/viewport_width=1000
+window/size/viewport_height=700
+window/size/resizable=false
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Fonts/": "purple",
+"res://Resources/": "blue",
+"res://Scenes/": "yellow",
+"res://Scripts/": "green"
+}
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0
+}

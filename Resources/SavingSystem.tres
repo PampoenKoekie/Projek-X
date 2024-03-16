@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SavingSystem" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/save_resource.gd" id="1_slcer"]
+
+[resource]
+script = ExtResource("1_slcer")
+save_array = Array[Array]([["Eendrag", "Maak mag, vat so!", Color(0.0564332, 0.541238, 0.344506, 1), 7, false], ["Dagse", "123", Color(0.175955, 0.989647, 0.355523, 1), 2, false], ["fff", "aaa", Color(0.723532, 0.802917, 0.226203, 1), 0, false]])

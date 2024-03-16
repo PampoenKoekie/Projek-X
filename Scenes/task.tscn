@@ -1,0 +1,270 @@
+[gd_scene load_steps=13 format=3 uid="uid://citij75s0rfl"]
+
+[ext_resource type="Script" path="res://Scripts/task.gd" id="1_y23sx"]
+[ext_resource type="Theme" uid="uid://dqr0uyy8qtfwg" path="res://Resources/ThemePanel.tres" id="2_6updf"]
+[ext_resource type="Theme" uid="uid://dd0glyvxien30" path="res://Resources/Theme.tres" id="2_j3nxj"]
+[ext_resource type="Texture2D" uid="uid://bnlqrd8do2u8o" path="res://Assets/Delete.svg" id="3_f5il1"]
+[ext_resource type="Texture2D" uid="uid://d22gt3lnj6vnr" path="res://Assets/Timer_hover.svg" id="4_35oxv"]
+[ext_resource type="Texture2D" uid="uid://bvgx5rdds1h8p" path="res://Assets/Checkmark.svg" id="4_j3kng"]
+[ext_resource type="Texture2D" uid="uid://cpt2ocol48wgt" path="res://Assets/Timer_active.svg" id="5_6oewe"]
+[ext_resource type="Texture2D" uid="uid://j766edur36ub" path="res://Assets/Timer.svg" id="6_jpymt"]
+[ext_resource type="Texture2D" uid="uid://ti02tudx370g" path="res://Assets/Delete_Hover.svg" id="8_cp5ly"]
+[ext_resource type="Texture2D" uid="uid://cinwfph23iltg" path="res://Assets/Checkmark_Hover.svg" id="10_y3l76"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pepx0"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfx7h"]
+bg_color = Color(0.764706, 0.647059, 0.423529, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Task" type="Control"]
+layout_mode = 3
+anchor_top = 0.046
+anchor_bottom = 0.046
+offset_top = -32.2
+offset_right = 708.0
+offset_bottom = 31.8
+script = ExtResource("1_y23sx")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 884.0
+offset_bottom = 64.0
+theme = ExtResource("2_6updf")
+
+[node name="TaskHeaderLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 41.0
+offset_top = 5.0
+offset_right = 533.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.764706, 0.647059, 0.423529, 1)
+theme_override_font_sizes/font_size = 21
+text = "Task Header Label"
+autowrap_mode = 2
+max_lines_visible = 1
+
+[node name="TaskDescribeLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 37.0
+offset_right = 532.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.796078, 0.796078, 0.796078, 1)
+theme_override_font_sizes/font_size = 12
+text = "Task describe"
+justification_flags = 160
+max_lines_visible = 1
+
+[node name="TimeLabelMinutes" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 575.0
+offset_right = 627.0
+offset_bottom = 64.0
+theme = ExtResource("2_j3nxj")
+theme_override_colors/font_color = Color(0.682353, 0.580392, 0.384314, 1)
+theme_override_font_sizes/font_size = 30
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Point" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 627.0
+offset_top = 1.0
+offset_right = 643.0
+offset_bottom = 64.0
+theme = ExtResource("2_j3nxj")
+theme_override_colors/font_color = Color(0.768627, 0.65098, 0.423529, 1)
+theme_override_font_sizes/font_size = 30
+text = ":"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabelSeconds" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 643.0
+offset_top = 1.0
+offset_right = 683.0
+offset_bottom = 64.0
+theme = ExtResource("2_j3nxj")
+theme_override_colors/font_color = Color(0.768627, 0.65098, 0.423529, 1)
+theme_override_font_sizes/font_size = 30
+text = "00"
+vertical_alignment = 1
+
+[node name="TimeButtonParticles" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(700.801, 33.2048)
+emitting = false
+amount = 30
+lifetime = 0.22
+fixed_fps = 60
+emission_shape = 2
+emission_sphere_radius = 18.45
+gravity = Vector2(0, 123)
+orbit_velocity_min = -0.65
+orbit_velocity_max = -0.4
+scale_amount_min = 0.25
+scale_amount_max = 1.51
+color = Color(0.286275, 0.647059, 0.815686, 1)
+
+[node name="TimerButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 689.0
+offset_top = 21.0
+offset_right = 713.0
+offset_bottom = 45.0
+toggle_mode = true
+texture_normal = ExtResource("6_jpymt")
+texture_pressed = ExtResource("5_6oewe")
+texture_hover = ExtResource("4_35oxv")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ColorRibbon" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 31.0
+offset_bottom = 64.0
+theme = ExtResource("2_j3nxj")
+color = Color(0.164706, 1, 1, 1)
+
+[node name="TaskTint" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(0.74902, 0.635294, 0.415686, 0.803922)
+layout_mode = 0
+offset_left = 31.0
+offset_right = 884.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pepx0")
+
+[node name="DeleteButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 820.0
+offset_top = 16.0
+offset_right = 852.0
+offset_bottom = 48.0
+texture_normal = ExtResource("3_f5il1")
+texture_hover = ExtResource("8_cp5ly")
+stretch_mode = 3
+
+[node name="CheckmarkButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 776.0
+offset_top = 16.0
+offset_right = 808.0
+offset_bottom = 48.0
+texture_normal = ExtResource("4_j3kng")
+texture_hover = ExtResource("10_y3l76")
+stretch_mode = 3
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[node name="NotepadButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 31.0
+offset_bottom = 64.0
+
+[node name="DeleteTask" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+transparent_bg = true
+position = Vector2i(430, 269)
+size = Vector2i(182, 99)
+transparent = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_mfx7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="DeleteTask"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -49.5
+offset_right = 91.0
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 21
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeleteTask/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="DeleteTask/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.121569, 0.121569, 0.121569, 1)
+text = "Delete task?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DeleteTask/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ButtonYes" type="Button" parent="DeleteTask/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Yes"
+
+[node name="ButtonNo" type="Button" parent="DeleteTask/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "No"
+
+[node name="NotesWindow" type="Window" parent="."]
+unique_name_in_owner = true
+transparent_bg = true
+gui_embed_subwindows = true
+title = "Notes"
+position = Vector2i(285, 126)
+size = Vector2i(420, 300)
+visible = false
+transparent = true
+popup_window = true
+theme = ExtResource("2_j3nxj")
+
+[node name="TextEdit" type="TextEdit" parent="NotesWindow"]
+unique_name_in_owner = true
+layout_direction = 1
+offset_right = 420.0
+offset_bottom = 300.0
+theme_override_colors/background_color = Color(0.0627451, 0.054902, 0.0470588, 1)
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+
+[connection signal="pressed" from="TimerButton" to="." method="_on_timer_button_pressed"]
+[connection signal="pressed" from="DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="CheckmarkButton" to="." method="_on_checkmark_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="NotepadButton" to="." method="_on_notepad_button_mouse_entered"]
+[connection signal="mouse_exited" from="NotepadButton" to="." method="_on_notepad_button_mouse_exited"]
+[connection signal="pressed" from="NotepadButton" to="." method="_on_notepad_button_pressed"]
+[connection signal="pressed" from="DeleteTask/MarginContainer/VBoxContainer/HBoxContainer/ButtonYes" to="." method="_on_button_yes_pressed"]
+[connection signal="pressed" from="DeleteTask/MarginContainer/VBoxContainer/HBoxContainer/ButtonNo" to="." method="_on_button_no_pressed"]
+[connection signal="close_requested" from="NotesWindow" to="." method="_on_notes_window_close_requested"]
+[connection signal="text_changed" from="NotesWindow/TextEdit" to="." method="_on_text_edit_text_changed"]

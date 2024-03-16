@@ -1,0 +1,107 @@
+[gd_scene load_steps=4 format=3 uid="uid://5h6scrx5gwk7"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_5yj0m"]
+[ext_resource type="Texture2D" uid="uid://d0m51hqjsdu2l" path="res://Assets/Arrow.svg" id="2_3iwms"]
+[ext_resource type="Texture2D" uid="uid://d2fmsqcoseipo" path="res://Assets/Add_Button.svg" id="3_mivp4"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1008.0
+offset_bottom = 704.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_5yj0m")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 1008.0
+offset_bottom = 704.0
+grow_vertical = 2
+color = Color(0.243137, 0.243137, 0.239216, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sidebar" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_right = 97.0
+offset_bottom = 704.0
+color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = -0.031746
+offset_right = 144.0
+offset_bottom = 112.0
+texture = ExtResource("2_3iwms")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AddButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 912.0
+offset_top = 32.0
+offset_right = 960.0
+offset_bottom = 80.0
+pivot_offset = Vector2(32, 32)
+texture_normal = ExtResource("3_mivp4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 112.0
+offset_top = 112.0
+offset_right = 992.0
+offset_bottom = 688.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 72
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 160.0
+offset_top = 32.0
+offset_right = 880.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="EditTaskName" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Task name..."
+
+[node name="EditTask" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Task description..."
+
+[node name="HistoryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 560.0
+offset_right = 80.0
+offset_bottom = 591.0
+text = "History"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 640.0
+offset_right = 80.0
+offset_bottom = 671.0
+text = "Exit"
+
+[connection signal="pressed" from="AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="text_changed" from="HBoxContainer/EditTaskName" to="." method="_on_edit_task_name_text_changed"]
+[connection signal="text_changed" from="HBoxContainer/EditTask" to="." method="_on_edit_task_text_changed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
